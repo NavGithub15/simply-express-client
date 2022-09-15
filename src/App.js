@@ -1,10 +1,21 @@
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Warehouse from "./pages/Warehouse";
+import Inventory from "./pages/Inventory";
+import "./App.scss";
 
 function App() {
   return (
-    <div className="App">
-      <h1>HELLO WORLD</h1>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path={"/"} element={<Warehouse />} />
+          <Route path={"warehouses"} element={<Warehouse />} />
+          <Route path={"inventory"} element={<Inventory />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
